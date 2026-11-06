@@ -1,0 +1,264 @@
+[
+  {
+    "instructions": [
+      "H/hlv.b.yaml",
+      "H/hlv.bu.yaml",
+      "H/hlv.d.yaml",
+      "H/hlv.h.yaml",
+      "H/hlv.hu.yaml",
+      "H/hlv.w.yaml",
+      "H/hlv.wu.yaml",
+      "H/hlvx.hu.yaml",
+      "H/hlvx.wu.yaml",
+      "Zicfiss/c.sspopchk.yaml",
+      "Zicfiss/sspopchk.yaml"
+    ],
+    "memory_access": "load"
+  },
+  {
+    "instructions": [
+      "H/hsv.b.yaml",
+      "H/hsv.d.yaml",
+      "H/hsv.h.yaml",
+      "H/hsv.w.yaml",
+      "Zicfiss/c.sspush.yaml",
+      "Zicfiss/sspush.yaml"
+    ],
+    "memory_access": "store"
+  },
+  {
+    "instructions": [
+      "V/vfmacc.vf.yaml",
+      "V/vfmacc.vv.yaml",
+      "V/vfmadd.vf.yaml",
+      "V/vfmadd.vv.yaml",
+      "V/vfmsac.vf.yaml",
+      "V/vfmsac.vv.yaml",
+      "V/vfmsub.vf.yaml",
+      "V/vfmsub.vv.yaml",
+      "V/vfnmacc.vf.yaml",
+      "V/vfnmacc.vv.yaml",
+      "V/vfnmadd.vf.yaml",
+      "V/vfnmadd.vv.yaml",
+      "V/vfnmsac.vf.yaml",
+      "V/vfnmsac.vv.yaml",
+      "V/vfnmsub.vf.yaml",
+      "V/vfnmsub.vv.yaml",
+      "V/vfwmacc.vf.yaml",
+      "V/vfwmacc.vv.yaml",
+      "V/vfwmsac.vf.yaml",
+      "V/vfwmsac.vv.yaml",
+      "V/vfwnmacc.vf.yaml",
+      "V/vfwnmacc.vv.yaml",
+      "V/vfwnmsac.vf.yaml",
+      "V/vfwnmsac.vv.yaml",
+      "V/vmacc.vv.yaml",
+      "V/vmacc.vx.yaml",
+      "V/vmadd.vv.yaml",
+      "V/vmadd.vx.yaml",
+      "V/vnmsac.vv.yaml",
+      "V/vnmsac.vx.yaml",
+      "V/vnmsub.vv.yaml",
+      "V/vnmsub.vx.yaml",
+      "V/vslideup.vi.yaml",
+      "V/vslideup.vx.yaml",
+      "V/vwmacc.vv.yaml",
+      "V/vwmacc.vx.yaml",
+      "V/vwmaccsu.vv.yaml",
+      "V/vwmaccsu.vx.yaml",
+      "V/vwmaccu.vv.yaml",
+      "V/vwmaccu.vx.yaml",
+      "V/vwmaccus.vx.yaml",
+      "Zvdot4a8i/vdot4a.vv.yaml",
+      "Zvdot4a8i/vdot4a.vx.yaml",
+      "Zvdot4a8i/vdot4asu.vv.yaml",
+      "Zvdot4a8i/vdot4asu.vx.yaml",
+      "Zvdot4a8i/vdot4au.vv.yaml",
+      "Zvdot4a8i/vdot4au.vx.yaml",
+      "Zvdot4a8i/vdot4aus.vx.yaml",
+      "Zvfbfwma/vfwmaccbf16.vf.yaml",
+      "Zvfbfwma/vfwmaccbf16.vv.yaml",
+      "Zvkg/vghsh.vv.yaml",
+      "Zvkg/vgmul.vv.yaml",
+      "Zvkned/vaesdf.vs.yaml",
+      "Zvkned/vaesdf.vv.yaml",
+      "Zvkned/vaesdm.vs.yaml",
+      "Zvkned/vaesdm.vv.yaml",
+      "Zvkned/vaesef.vs.yaml",
+      "Zvkned/vaesef.vv.yaml",
+      "Zvkned/vaesem.vs.yaml",
+      "Zvkned/vaesem.vv.yaml",
+      "Zvkned/vaeskf2.vi.yaml",
+      "Zvkned/vaesz.vs.yaml",
+      "Zvknha/vsha2ch.vv.yaml",
+      "Zvknha/vsha2cl.vv.yaml",
+      "Zvknha/vsha2ms.vv.yaml",
+      "Zvks/vsm3c.vi.yaml",
+      "Zvks/vsm4r.vs.yaml",
+      "Zvks/vsm4r.vv.yaml"
+    ],
+    "operand_facts": [
+      {
+        "name": "vd",
+        "source": true
+      }
+    ]
+  },
+  {
+    "instructions": [
+      "Zabha/amocas.b.aq.yaml",
+      "Zabha/amocas.b.aqrl.yaml",
+      "Zabha/amocas.b.rl.yaml",
+      "Zabha/amocas.b.yaml",
+      "Zabha/amocas.h.aq.yaml",
+      "Zabha/amocas.h.aqrl.yaml",
+      "Zabha/amocas.h.rl.yaml",
+      "Zabha/amocas.h.yaml",
+      "Zacas/amocas.w.aq.yaml",
+      "Zacas/amocas.w.aqrl.yaml",
+      "Zacas/amocas.w.rl.yaml",
+      "Zacas/amocas.w.yaml"
+    ],
+    "operand_facts": [
+      {
+        "name": "xd",
+        "source": true
+      }
+    ]
+  },
+  {
+    "instructions": [
+      "Zacas/amocas.d.aq.yaml",
+      "Zacas/amocas.d.aqrl.yaml",
+      "Zacas/amocas.d.rl.yaml",
+      "Zacas/amocas.d.yaml"
+    ],
+    "operand_facts": {
+      "RV32": [
+        {
+          "name": "xd",
+          "source": true,
+          "type": "register_pair"
+        },
+        {
+          "name": "xs2",
+          "type": "register_pair"
+        }
+      ],
+      "RV64": [
+        {
+          "name": "xd",
+          "source": true
+        }
+      ]
+    }
+  },
+  {
+    "instructions": [
+      "Zacas/amocas.q.aq.yaml",
+      "Zacas/amocas.q.aqrl.yaml",
+      "Zacas/amocas.q.rl.yaml",
+      "Zacas/amocas.q.yaml"
+    ],
+    "operand_facts": [
+      {
+        "name": "xd",
+        "source": true,
+        "type": "register_pair"
+      },
+      {
+        "name": "xs2",
+        "type": "register_pair"
+      }
+    ]
+  },
+  {
+    "instructions": [
+      "Zfa/fli.d.yaml",
+      "Zfa/fli.h.yaml",
+      "Zfa/fli.q.yaml",
+      "Zfa/fli.s.yaml"
+    ],
+    "operand_facts": [
+      {
+        "name": "xs1",
+        "type": "float_immediate"
+      }
+    ]
+  },
+  {
+    "instructions": [
+      "Zicfilp/lpad.yaml"
+    ],
+    "operand_facts": [
+      {
+        "name": "t2",
+        "register": 7
+      }
+    ]
+  },
+  {
+    "instructions": [
+      "Zimop/mop.r.0.yaml",
+      "Zimop/mop.r.1.yaml",
+      "Zimop/mop.r.10.yaml",
+      "Zimop/mop.r.11.yaml",
+      "Zimop/mop.r.12.yaml",
+      "Zimop/mop.r.13.yaml",
+      "Zimop/mop.r.14.yaml",
+      "Zimop/mop.r.15.yaml",
+      "Zimop/mop.r.16.yaml",
+      "Zimop/mop.r.17.yaml",
+      "Zimop/mop.r.18.yaml",
+      "Zimop/mop.r.19.yaml",
+      "Zimop/mop.r.2.yaml",
+      "Zimop/mop.r.20.yaml",
+      "Zimop/mop.r.21.yaml",
+      "Zimop/mop.r.22.yaml",
+      "Zimop/mop.r.23.yaml",
+      "Zimop/mop.r.24.yaml",
+      "Zimop/mop.r.25.yaml",
+      "Zimop/mop.r.26.yaml",
+      "Zimop/mop.r.27.yaml",
+      "Zimop/mop.r.28.yaml",
+      "Zimop/mop.r.29.yaml",
+      "Zimop/mop.r.3.yaml",
+      "Zimop/mop.r.30.yaml",
+      "Zimop/mop.r.31.yaml",
+      "Zimop/mop.r.4.yaml",
+      "Zimop/mop.r.5.yaml",
+      "Zimop/mop.r.6.yaml",
+      "Zimop/mop.r.7.yaml",
+      "Zimop/mop.r.8.yaml",
+      "Zimop/mop.r.9.yaml"
+    ],
+    "operand_facts": [
+      {
+        "name": "xs1",
+        "source": false
+      }
+    ]
+  },
+  {
+    "instructions": [
+      "Zimop/mop.rr.0.yaml",
+      "Zimop/mop.rr.1.yaml",
+      "Zimop/mop.rr.2.yaml",
+      "Zimop/mop.rr.3.yaml",
+      "Zimop/mop.rr.4.yaml",
+      "Zimop/mop.rr.5.yaml",
+      "Zimop/mop.rr.6.yaml",
+      "Zimop/mop.rr.7.yaml"
+    ],
+    "operand_facts": [
+      {
+        "name": "xs2",
+        "source": false
+      },
+      {
+        "name": "xs1",
+        "source": false
+      }
+    ]
+  }
+]
