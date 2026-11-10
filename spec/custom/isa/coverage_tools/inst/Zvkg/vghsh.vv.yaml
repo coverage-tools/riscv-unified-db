@@ -1,0 +1,8 @@
+custom_semantics:
+  version: 1
+  references:
+    - https://github.com/riscv-software-src/riscv-unified-db/blob/404e4468f453e007b37358b201a3f59da11719d9/spec/std/isa/inst/Zvkg/vghsh.vv.yaml
+    - https://docs.riscv.org/reference/isa/v20250508/unpriv/vector-crypto.html#insns-vghsh
+  operands:
+    vd:
+      role: read_write
