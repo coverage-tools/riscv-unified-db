@@ -1,0 +1,4 @@
+custom_semantics:
+  operands:
+    xs1:
+      kind: immediate

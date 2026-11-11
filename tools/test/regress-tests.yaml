@@ -5,6 +5,14 @@
 
 ---
 tests:
+  regress-coverage-overlay:
+    ci_stage: pr
+    tags:
+      - smoke
+    test:
+      - name: Validate coverage overlay schema
+        run: ./bin/python tools/scripts/check_coverage_overlay.py
+
   regress-scripts-unit:
     ci_stage: pr
     tags:

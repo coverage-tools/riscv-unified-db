@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "facts": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "operands": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "kind": {
+                "enum": ["gpr", "fpr", "vr", "modifier", "immediate"]
+              }
+            },
+            "required": ["kind"]
+          }
+        },
+        "memory_access": {
+          "description": "Instruction memory-reference class, including explicit jump-table reads. Omit when no marker applies.",
+          "enum": [
+            "load",
+            "store",
+            "atomic",
+            "prefetch",
+            "cache_management"
+          ]
+        },
+        "control_flow": {
+          "description": "Instruction control-flow class, excluding incidental exceptions and interrupts. Omit when no marker applies.",
+          "enum": [
+            "branch",
+            "jump",
+            "indirect_jump",
+            "breakpoint",
+            "trap_return",
+            "environment_call"
+          ]
+        }
+      },
+      "anyOf": [
+        {
+          "required": ["operands"]
+        },
+        {
+          "required": ["memory_access"]
+        },
+        {
+          "required": ["control_flow"]
+        }
+      ]
+    },
+    "nativePatch": {
+      "type": "object",
+      "required": ["custom_semantics"],
+      "properties": {
+        "custom_semantics": {
+          "$ref": "#/$defs/facts"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$ref": "#/$defs/nativePatch"
+}
