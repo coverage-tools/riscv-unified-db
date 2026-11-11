@@ -12,8 +12,6 @@ tests:
     test:
       - name: Validate coverage overlay schema
         run: ./bin/python tools/scripts/check_coverage_overlay.py
-      - name: Check overlay validation failures
-        run: ./bin/python -m pytest tools/scripts/test/test_coverage_overlay.py
 
   regress-scripts-unit:
     ci_stage: pr

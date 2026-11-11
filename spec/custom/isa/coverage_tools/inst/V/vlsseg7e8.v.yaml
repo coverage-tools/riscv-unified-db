@@ -1,0 +1,2 @@
+custom_semantics:
+  memory_access: load

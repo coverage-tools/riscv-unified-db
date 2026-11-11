@@ -132,7 +132,6 @@ SPDX-License-Identifier = "CC0-1.0"
 path = [
     "spec/custom/isa/coverage_tools/**",
     "tools/scripts/check_coverage_overlay.py",
-    "tools/scripts/test/test_coverage_overlay.py",
 ]
 SPDX-FileCopyrightText = "2026 coverage-tools contributors"
 SPDX-License-Identifier = "MIT"

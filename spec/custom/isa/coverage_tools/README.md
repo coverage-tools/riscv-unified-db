@@ -1,41 +1,35 @@
 # Coverage semantics overlay
 
-Each file under `inst/<extension>/<instruction>.yaml` adds reviewed
-`custom_semantics` to the corresponding standard UDB instruction. The files use
-UDB's native overlay layout. Each patch retains its specification references.
+This overlay marks instructions that reference memory or transfer control.
+Each `inst/<extension>/<instruction>.yaml` file adds `custom_semantics` through
+UDB's native overlay layout. The overlay path identifies the corresponding
+UDB instruction.
 
-`schema.json` validates the patches. The PR regression
-`regress-coverage-overlay` checks the data and rejection cases through the
-shared regression runner. The tracecow generator selects this directory through
-`--overlay` or CMake's `RVCVD_UDB_OVERLAY`. Without an overlay, generation uses
-upstream facts alone.
+## Instruction markers
 
-Roles describe explicit register dataflow during successful execution. Immediate
-and modifier operands use `not_applicable`; `unused` marks ignored register
-fields. Preserving masked-off, tail or prestart vector elements does not make a
-destination an input. These fields do not list all implicit register or CSR
-effects, conditional effects, memory widths or register groups.
+| Property | Values emitted |
+| --- | --- |
+| `memory_access` | `load`, `store`, `atomic`, `prefetch`, `cache_management` |
+| `control_flow` | `branch`, `jump`, `indirect_jump`, `trap_return`, `environment_call`, `breakpoint` |
 
-Memory properties describe architectural data accesses, excluding address
-translation. Categories distinguish loads, stores, atomics, prefetch hints and
-cache maintenance. `environment_defined` and `csr_dependent` preserve effects
-that require an execution environment or a selected CSR. Control flow excludes
-incidental faults and trap delivery; `environment_call` and `csr_dependent`
-identify explicit environment calls and CSR-dependent behavior. Missing fields
-remain unknown.
+Add only the applicable properties. A load needs no control-flow field; a branch
+needs no memory field. An ordinary arithmetic instruction needs neither.
+Missing markers produce no placeholder, warning, or report. The schema permits
+only the positive marker values listed above.
 
-References identify the sources used to review the facts; they do not enforce
-per-instruction content checks. A missing instruction or operand,
-or contradictory extracted fact fails consumer validation.
-Operand kinds and roles default from UDB field names: `x`, `f` and `v`
-register fields select the bank; source fields read, destination fields write,
-and combined fields read and write. Non-register operands use `not_applicable`.
-Memory and control-flow facts derived from instruction encodings are omitted.
-The overlay records only exceptions to the derived facts. An operand entry may
-provide `kind`, `role`, or both. For example, FLI overrides `xs1` to `immediate`;
-its `not_applicable` role follows from the corrected kind.
-An already-known matching fact produces a redundancy warning and can be removed.
-Generated source metadata includes a digest of the selected overlay and schema.
+Memory references include loads, stores, LR/SC, atomic read-modify-write
+operations, prefetch hints, cache management, and explicit jump-table reads.
+Acquire loads and release stores use `load` and `store`. Ordinary instruction
+fetch and implicit address-translation accesses are outside this classification.
+For example, `cm.popret` and `cm.jt` carry both `memory_access: load` and
+`control_flow: indirect_jump`.
+
+`environment_call` marks ECALL; `breakpoint` marks explicit breakpoint/debug
+transfers. Incidental exceptions and interrupts do not make an instruction a
+control-flow instruction. Potential effects of an environment handler or a
+selected CSR are outside the markers' scope.
+
+## Licensing
 
 The overlay, schema and tools are licensed under
 [MIT](../../../../LICENSES/MIT.txt). File attribution is recorded in

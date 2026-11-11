@@ -1,0 +1,2 @@
+custom_semantics:
+  control_flow: indirect_jump
